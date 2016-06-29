@@ -1,0 +1,6 @@
+c:\users\oliak\documents\visual studio 2015\Projects\EX7_1_Olia_Sednev\CustomersApp\bin\Debug\CustomersApp.exe.config
+c:\users\oliak\documents\visual studio 2015\Projects\EX7_1_Olia_Sednev\CustomersApp\bin\Debug\CustomersApp.exe
+c:\users\oliak\documents\visual studio 2015\Projects\EX7_1_Olia_Sednev\CustomersApp\bin\Debug\CustomersApp.pdb
+c:\users\oliak\documents\visual studio 2015\Projects\EX7_1_Olia_Sednev\CustomersApp\obj\Debug\CustomersApp.csprojResolveAssemblyReference.cache
+c:\users\oliak\documents\visual studio 2015\Projects\EX7_1_Olia_Sednev\CustomersApp\obj\Debug\CustomersApp.exe
+c:\users\oliak\documents\visual studio 2015\Projects\EX7_1_Olia_Sednev\CustomersApp\obj\Debug\CustomersApp.pdb

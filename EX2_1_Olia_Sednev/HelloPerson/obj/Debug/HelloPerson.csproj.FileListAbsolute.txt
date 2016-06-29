@@ -1,0 +1,6 @@
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_1_Olia_Sednev\HelloPerson\bin\Debug\HelloPerson.exe.config
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_1_Olia_Sednev\HelloPerson\bin\Debug\HelloPerson.exe
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_1_Olia_Sednev\HelloPerson\bin\Debug\HelloPerson.pdb
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_1_Olia_Sednev\HelloPerson\obj\Debug\HelloPerson.csprojResolveAssemblyReference.cache
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_1_Olia_Sednev\HelloPerson\obj\Debug\HelloPerson.exe
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_1_Olia_Sednev\HelloPerson\obj\Debug\HelloPerson.pdb

@@ -1,0 +1,6 @@
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_3_Olia_Sednev\GuessingGame\bin\Debug\GuessingGame.exe.config
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_3_Olia_Sednev\GuessingGame\bin\Debug\GuessingGame.exe
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_3_Olia_Sednev\GuessingGame\bin\Debug\GuessingGame.pdb
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_3_Olia_Sednev\GuessingGame\obj\Debug\GuessingGame.csprojResolveAssemblyReference.cache
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_3_Olia_Sednev\GuessingGame\obj\Debug\GuessingGame.exe
+c:\users\oliak\documents\visual studio 2015\Projects\EX2_3_Olia_Sednev\GuessingGame\obj\Debug\GuessingGame.pdb
