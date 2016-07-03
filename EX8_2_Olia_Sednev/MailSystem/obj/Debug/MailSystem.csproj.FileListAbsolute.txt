@@ -4,3 +4,6 @@ c:\users\oliak\documents\visual studio 2015\Projects\EX8_2_Olia_Sednev\MailSyste
 c:\users\oliak\documents\visual studio 2015\Projects\EX8_2_Olia_Sednev\MailSystem\obj\Debug\MailSystem.csprojResolveAssemblyReference.cache
 c:\users\oliak\documents\visual studio 2015\Projects\EX8_2_Olia_Sednev\MailSystem\obj\Debug\MailSystem.exe
 c:\users\oliak\documents\visual studio 2015\Projects\EX8_2_Olia_Sednev\MailSystem\obj\Debug\MailSystem.pdb
+D:\CodeV-College\VS_ex\CodeValue_HW\EX8_2_Olia_Sednev\MailSystem\bin\Debug\MailSystem.exe.config
+D:\CodeV-College\VS_ex\CodeValue_HW\EX8_2_Olia_Sednev\MailSystem\obj\Debug\MailSystem.exe
+D:\CodeV-College\VS_ex\CodeValue_HW\EX8_2_Olia_Sednev\MailSystem\obj\Debug\MailSystem.pdb
