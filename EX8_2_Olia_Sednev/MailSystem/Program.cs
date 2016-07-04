@@ -7,28 +7,30 @@ using System.Threading.Tasks;
 
 namespace MailSystem
 {
-    class Program
+    internal class Program
     {
-        class TimerState
+        private class TimerState
         {
-            public int counter = 0;
-            public Timer timer;
+            public int Counter = 0;
+            public Timer Timer;
         }
-        static void CheckStatus(object state)
+
+        private static void CheckStatus(object state)
         {
-            MailManager mailData = new MailManager();
+            var mailData = new MailManager();
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Title); };
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Body); };
             mailData.SimulateMailArrived();
 
-            TimerState timerState = (TimerState)state;
-            timerState.counter++;
-            Console.WriteLine("{0} Checking Status {1}.", DateTime.Now.TimeOfDay, timerState.counter);
+            var timerState = (TimerState)state;
+            timerState.Counter++;
+            Console.WriteLine($"{DateTime.Now.TimeOfDay} Checking Status {timerState.Counter}.");
 
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
-            MailManager mailData = new MailManager();//publisher
+            var mailData = new MailManager();//publisher
 
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Title); };
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Body); };
@@ -36,19 +38,19 @@ namespace MailSystem
             mailData.SimulateMailArrived();
 
 
-            TimerState timerState = new TimerState();
+            var timerState = new TimerState();
 
             // Create the delegate that invokes methods for the timer.
-            TimerCallback timerDelegate = new TimerCallback(CheckStatus);
+            var timerDelegate = new TimerCallback(CheckStatus);
 
             // Create a timer that waits one second, then invokes every second.
-            Timer timer = new Timer(timerDelegate, timerState, 1000, 1000);
+            var timer = new Timer(timerDelegate, timerState, 1000, 1000);
 
             // Keep a handle to the timer, so it can be disposed.
-            timerState.timer = timer;
+            timerState.Timer = timer;
 
             // The main thread does nothing until the timer is disposed.
-            while (timerState.timer != null)
+            while (timerState.Timer != null)
                 Thread.Sleep(0);
             Console.WriteLine("Timer example done.");
             // The following method is called by the timer's delegate.
