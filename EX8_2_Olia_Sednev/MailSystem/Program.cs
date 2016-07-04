@@ -14,7 +14,7 @@ namespace MailSystem
             public int counter = 0;
             public Timer timer;
         }
-        static void CheckStatus(Object state)
+        static void CheckStatus(object state)
         {
             MailManager mailData = new MailManager();
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Title); };
