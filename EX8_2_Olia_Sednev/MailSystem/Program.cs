@@ -51,9 +51,9 @@ namespace MailSystem
 
             // The main thread does nothing until the timer is disposed.
             while (timerState.Timer != null)
+            {
                 Thread.Sleep(0);
-            Console.WriteLine("Timer example done.");
-            // The following method is called by the timer's delegate.
+            }
         }
     }
 }
