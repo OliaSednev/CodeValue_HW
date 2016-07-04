@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -40,10 +41,10 @@ namespace MailSystem
 
             var timerState = new TimerState();
 
-            // Create the delegate that invokes methods for the timer.
+            // Delegate that invokes methods for the timer.
             var timerDelegate = new TimerCallback(CheckStatus);
 
-            // Create a timer that waits one second, then invokes every second.
+            // timer that waits one second, then invokes every second.
             var timer = new Timer(timerDelegate, timerState, 1000, 1000);
 
             // Keep a handle to the timer, so it can be disposed.
