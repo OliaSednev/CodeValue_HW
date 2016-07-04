@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_2_Olia_Sednev\TicTacToe\bin\Debug\TicTacToe.exe.config
-C:\Users\oliak\documents\visual studio 2015\Projects\EX4_2_Olia_Sednev\TicTacToe\bin\Debug\TicTacToe.exe
-C:\Users\oliak\documents\visual studio 2015\Projects\EX4_2_Olia_Sednev\TicTacToe\bin\Debug\TicTacToe.pdb
-C:\Users\oliak\documents\visual studio 2015\Projects\EX4_2_Olia_Sednev\TicTacToe\obj\Debug\TicTacToe.csprojResolveAssemblyReference.cache
-C:\Users\oliak\documents\visual studio 2015\Projects\EX4_2_Olia_Sednev\TicTacToe\obj\Debug\TicTacToe.exe
-C:\Users\oliak\documents\visual studio 2015\Projects\EX4_2_Olia_Sednev\TicTacToe\obj\Debug\TicTacToe.pdb

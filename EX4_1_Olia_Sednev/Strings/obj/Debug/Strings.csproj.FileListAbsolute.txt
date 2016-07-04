@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_1_Olia_Sednev\Strings\bin\Debug\Strings.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_1_Olia_Sednev\Strings\bin\Debug\Strings.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_1_Olia_Sednev\Strings\bin\Debug\Strings.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_1_Olia_Sednev\Strings\obj\Debug\Strings.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_1_Olia_Sednev\Strings\obj\Debug\Strings.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX4_1_Olia_Sednev\Strings\obj\Debug\Strings.pdb

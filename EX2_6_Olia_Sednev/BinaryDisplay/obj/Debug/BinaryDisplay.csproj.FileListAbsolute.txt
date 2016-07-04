@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_6_Olia_Sednev\BinaryDisplay\bin\Debug\BinaryDisplay.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_6_Olia_Sednev\BinaryDisplay\bin\Debug\BinaryDisplay.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_6_Olia_Sednev\BinaryDisplay\bin\Debug\BinaryDisplay.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_6_Olia_Sednev\BinaryDisplay\obj\Debug\BinaryDisplay.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_6_Olia_Sednev\BinaryDisplay\obj\Debug\BinaryDisplay.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_6_Olia_Sednev\BinaryDisplay\obj\Debug\BinaryDisplay.pdb

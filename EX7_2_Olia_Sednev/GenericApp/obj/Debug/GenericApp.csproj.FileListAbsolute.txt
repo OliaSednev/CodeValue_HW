@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX7_2_Olia_Sednev\GenericApp\bin\Debug\GenericApp.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX7_2_Olia_Sednev\GenericApp\bin\Debug\GenericApp.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX7_2_Olia_Sednev\GenericApp\bin\Debug\GenericApp.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX7_2_Olia_Sednev\GenericApp\obj\Debug\GenericApp.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX7_2_Olia_Sednev\GenericApp\obj\Debug\GenericApp.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX7_2_Olia_Sednev\GenericApp\obj\Debug\GenericApp.pdb

@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_4_Olia_Sednev\Quad\bin\Debug\Quad.exe.config
-C:\Users\oliak\documents\visual studio 2015\Projects\EX2_4_Olia_Sednev\Quad\bin\Debug\Quad.exe
-C:\Users\oliak\documents\visual studio 2015\Projects\EX2_4_Olia_Sednev\Quad\bin\Debug\Quad.pdb
-C:\Users\oliak\documents\visual studio 2015\Projects\EX2_4_Olia_Sednev\Quad\obj\Debug\Quad.csprojResolveAssemblyReference.cache
-C:\Users\oliak\documents\visual studio 2015\Projects\EX2_4_Olia_Sednev\Quad\obj\Debug\Quad.exe
-C:\Users\oliak\documents\visual studio 2015\Projects\EX2_4_Olia_Sednev\Quad\obj\Debug\Quad.pdb

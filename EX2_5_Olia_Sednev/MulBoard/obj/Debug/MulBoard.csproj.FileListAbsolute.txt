@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_5_Olia_Sednev\MulBoard\bin\Debug\MulBoard.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_5_Olia_Sednev\MulBoard\bin\Debug\MulBoard.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_5_Olia_Sednev\MulBoard\bin\Debug\MulBoard.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_5_Olia_Sednev\MulBoard\obj\Debug\MulBoard.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_5_Olia_Sednev\MulBoard\obj\Debug\MulBoard.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_5_Olia_Sednev\MulBoard\obj\Debug\MulBoard.pdb

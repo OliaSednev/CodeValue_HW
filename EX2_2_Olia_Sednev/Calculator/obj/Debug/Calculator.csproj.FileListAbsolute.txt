@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_2_Olia_Sednev\Calculator\bin\Debug\Calculator.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_2_Olia_Sednev\Calculator\bin\Debug\Calculator.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_2_Olia_Sednev\Calculator\bin\Debug\Calculator.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_2_Olia_Sednev\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_2_Olia_Sednev\Calculator\obj\Debug\Calculator.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_2_Olia_Sednev\Calculator\obj\Debug\Calculator.pdb

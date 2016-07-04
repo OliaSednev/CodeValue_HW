@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_7_Olia_Sednev\DollarStairs\bin\Debug\DollarStairs.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_7_Olia_Sednev\DollarStairs\bin\Debug\DollarStairs.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_7_Olia_Sednev\DollarStairs\bin\Debug\DollarStairs.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_7_Olia_Sednev\DollarStairs\obj\Debug\DollarStairs.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_7_Olia_Sednev\DollarStairs\obj\Debug\DollarStairs.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX2_7_Olia_Sednev\DollarStairs\obj\Debug\DollarStairs.pdb

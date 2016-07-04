@@ -1,6 +1,0 @@
-c:\users\oliak\documents\visual studio 2015\Projects\EX3_2_Olia_Sednev\Rationals\bin\Debug\Rationals.exe.config
-c:\users\oliak\documents\visual studio 2015\Projects\EX3_2_Olia_Sednev\Rationals\bin\Debug\Rationals.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX3_2_Olia_Sednev\Rationals\bin\Debug\Rationals.pdb
-c:\users\oliak\documents\visual studio 2015\Projects\EX3_2_Olia_Sednev\Rationals\obj\Debug\Rationals.csprojResolveAssemblyReference.cache
-c:\users\oliak\documents\visual studio 2015\Projects\EX3_2_Olia_Sednev\Rationals\obj\Debug\Rationals.exe
-c:\users\oliak\documents\visual studio 2015\Projects\EX3_2_Olia_Sednev\Rationals\obj\Debug\Rationals.pdb
