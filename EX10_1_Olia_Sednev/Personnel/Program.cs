@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace Personnel
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
