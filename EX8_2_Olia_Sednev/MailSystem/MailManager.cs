@@ -15,7 +15,7 @@ namespace MailSystem
         {
             Console.WriteLine("SimulateMailArrived.....");
 
-            OnMailArrived(new MailArrivedEventArgs("new title...", "new body...."));
+            OnMailArrived(new MailArrivedEventArgs("new title...", "new body..."));
         }
         protected virtual void OnMailArrived(MailArrivedEventArgs arg)
         {

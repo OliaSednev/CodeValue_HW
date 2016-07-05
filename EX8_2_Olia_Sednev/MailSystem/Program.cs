@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,7 +18,7 @@ namespace MailSystem
 
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Title); };
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Body); };
-
+            
             mailData.SimulateMailArrived();
             var timer = new Timer(TimerCallback, null, 1000, 1000);
             Console.ReadLine();
@@ -32,6 +33,7 @@ namespace MailSystem
             mailData.MailArrived += (obj, mailevenArgs) => { Console.WriteLine(mailevenArgs.Body); };
 
             mailData.SimulateMailArrived();
+
             Console.WriteLine($"{DateTime.Now.TimeOfDay}");
         }
     }
