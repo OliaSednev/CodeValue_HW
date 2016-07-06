@@ -19,7 +19,16 @@ namespace FileFinder
                 {
                     foreach (string file in Directory.GetFiles(subdirectory, desiredFile))
                     {
-                        ListAfterSearching.Add(Path.GetFileName(file));
+                        var name = Path.GetFileNameWithoutExtension(desiredFile);
+                        var extension = Path.GetExtension(desiredFile);
+                        var fName = Path.GetFileNameWithoutExtension(file);
+                        var fExtension = Path.GetExtension(file);
+                        if ((fName != null && fExtension != null && fName.Equals("*name*") && fExtension.Equals(".*")) ||
+                            (fName != null && fExtension != null && fName.Equals("*") && fExtension.Equals("extension")))
+                        {
+                            ListAfterSearching.Add(Path.GetFileName(file));
+                        }
+                        
                     }
                     GetFilesFromSubdirectories(subdirectory, desiredFile); //Recursion
                 }
@@ -40,23 +49,25 @@ namespace FileFinder
 
         public void GetAllFiles(string directoryName, string fileName)
         {
-            var info= new FileInfo(fileName);
-            var fName= Path.GetFileNameWithoutExtension(info.Name);
-            var fExtension = Path.GetExtension(info.Extension);
-            List<string> paths=new List<string>();
+            //var info= new FileInfo(fileName);
+            //var fName= Path.GetFileNameWithoutExtension(info.Name);
+            //var fExtension = Path.GetExtension(info.Extension);
+            //List<string> paths=new List<string>();
 
-            var newPath = "*" + fName + "*" + "." + "*";
-            paths.Add(newPath);
-            newPath = "*" + fExtension;
-            paths.Add(newPath);
+            //var newPath = "*" + fName + "*" + "." + "*";
+            //paths.Add(newPath);
+            //newPath = "*" + fExtension;
+            //paths.Add(newPath);
 
-            foreach (var item in paths)
-            {
-                GetFilesFromDirectory(directoryName, item);
-                GetFilesFromSubdirectories(directoryName, item);
-            }
-            //GetFilesFromDirectory(directoryName, newPath);
-            //GetFilesFromSubdirectories(directoryName, newPath);  
+            //foreach (var item in paths)
+            //{
+            //    GetFilesFromDirectory(directoryName, item);
+            //    GetFilesFromSubdirectories(directoryName, item);
+            //}
+
+
+            //GetFilesFromDirectory(directoryName, fileName);
+            GetFilesFromSubdirectories(directoryName, fileName);
 
         }
 
