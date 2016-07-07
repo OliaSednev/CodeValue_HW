@@ -24,7 +24,6 @@ namespace FileFinder
                 Console.WriteLine("One or more of the search parameters is missing!!!");
                 }
             }
-
             catch(DirectoryNotFoundException DirNotFound)
             {
                 Console.WriteLine(DirNotFound.Message);

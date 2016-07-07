@@ -27,7 +27,8 @@ namespace FileFinder
         {
             foreach (var file in ListAfterSearching)
             {
-                Console.WriteLine($"File name: {file.Name}, File Length: {file.Length}");
+                Console.WriteLine($"File name: {file.Name}");
+                //Console.WriteLine($"File Length: {file.Length}");
             }
         }
     }
