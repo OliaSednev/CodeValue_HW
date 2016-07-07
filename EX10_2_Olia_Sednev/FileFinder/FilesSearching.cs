@@ -9,76 +9,25 @@ namespace FileFinder
 {
     internal class FilesSearching
     {
-        public List<string> ListAfterSearching = new List<string>();
+        private List<FileInfo> ListAfterSearching = new List<FileInfo>();
 
-        public void GetFilesFromSubdirectories(string directory, string desiredFile)
+        public void GetAllFiles(string directory, string desiredFile)
         {
-            foreach (string subdirectory in Directory.GetDirectories(directory))
+            string _file = "*" + desiredFile + "*"; //File should be in the search results, if any part of the name match
+
+            foreach (string file in Directory.EnumerateFiles(directory, _file))
             {
-                try
-                {
-                    foreach (string file in Directory.GetFiles(subdirectory, desiredFile))
-                    {
-                        //var name = Path.GetFileNameWithoutExtension(desiredFile);
-                        //var extension = Path.GetExtension(desiredFile);
-                        //var fName = Path.GetFileNameWithoutExtension(file);
-                        //var fExtension = Path.GetExtension(file);
-                        //if (file.Contains(desiredFile))
-                        //{
-                            ListAfterSearching.Add(Path.GetFileName(file));
-                        //}
-                        //if ((fName != null && fExtension != null && fName.Equals("*name*") && fExtension.Equals(".*")) ||
-                        //    (fName != null && fExtension != null && fName.Equals("*") && fExtension.Equals("extension")))
-                        //{
-                        //    ListAfterSearching.Add(Path.GetFileName(file));
-                        //}
-
-                    }
-                    GetFilesFromSubdirectories(subdirectory, desiredFile); //Recursion
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error.Message);
-                }
+                ListAfterSearching.Add(new FileInfo(file));
             }
-        }
-
-        public void GetFilesFromDirectory(string directory, string desiredFile)
-        {
-            foreach (string file in Directory.GetFiles(directory, desiredFile))
-            {
-                ListAfterSearching.Add(Path.GetFileName(file));
-            }
-        }
-
-        public void GetAllFiles(string directoryName, string fileName)
-        {
-            GetFilesFromDirectory(directoryName, fileName);
-            GetFilesFromSubdirectories(directoryName, fileName);
-
-            //var info= new FileInfo(fileName);
-            //var fName= Path.GetFileNameWithoutExtension(info.Name);
-            //var fExtension = Path.GetExtension(info.Extension);
-            //List<string> paths=new List<string>();
-
-            //var newPath = "*" + fName + "*" + "." + "*";
-            //paths.Add(newPath);
-            //newPath = "*" + fExtension;
-            //paths.Add(newPath);
-
-            //foreach (var item in paths)
-            //{
-            //    GetFilesFromDirectory(directoryName, item);
-            //    GetFilesFromSubdirectories(directoryName, item);
-            //}
-
+            foreach (var subdirectory in Directory.EnumerateDirectories(directory))
+                GetAllFiles(subdirectory, desiredFile); //next directory
         }
 
         public void DisplayFiles()
         {
             foreach (var file in ListAfterSearching)
             {
-                Console.WriteLine(file);
+                Console.WriteLine($"File name: {file.Name}, File Length: {file.Length}");
             }
         }
     }
