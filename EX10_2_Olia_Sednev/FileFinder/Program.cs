@@ -13,38 +13,34 @@ namespace FileFinder
         {
             try
             {
-                //if ((args.Length == 2) && Directory.Exists(args[0]))
-                //{
+                if (args.Length == 2)
+                {
                     var getAllFiles = new FilesSearching();
                     getAllFiles.GetAllFiles(args[0], args[1]);
                     getAllFiles.DisplayFiles();
-                //}
-                //else
-                //{
-                //    Console.WriteLine("One or more of the search parameters is missing!!!");
-                //}
+                }
+                else
+                {
+                Console.WriteLine("One or more of the search parameters is missing!!!");
+                }
             }
 
-            catch (DirectoryNotFoundException DirNotFound)
+            catch(DirectoryNotFoundException DirNotFound)
             {
-                Console.WriteLine("{0}", DirNotFound.Message);
+                Console.WriteLine(DirNotFound.Message);
             }
             catch (UnauthorizedAccessException UnAuthDir)
             {
-                Console.WriteLine("UnAuthDir: {0}", UnAuthDir.Message);
+                Console.WriteLine(UnAuthDir.Message);
             }
             catch (PathTooLongException LongPath)
             {
-                Console.WriteLine("{0}", LongPath.Message);
+                Console.WriteLine(LongPath.Message); 
             }
-
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
         }
-
-
-
     }
 }
