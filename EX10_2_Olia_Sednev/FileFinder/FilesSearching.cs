@@ -9,13 +9,13 @@ namespace FileFinder
 {
     internal class FilesSearching
     {
-        private List<FileInfo> ListAfterSearching = new List<FileInfo>();
+        private readonly List<FileInfo> ListAfterSearching = new List<FileInfo>();
 
         public void GetAllFiles(string directory, string desiredFile)
         {
-            string _file = "*" + desiredFile + "*"; //File should be in the search results, if any part of the name match
+            var _file = "*" + desiredFile + "*"; //File should be in the search results, if any part of the name match
 
-            foreach (string file in Directory.EnumerateFiles(directory, _file))
+            foreach (var file in Directory.EnumerateFiles(directory, _file))
             {
                 ListAfterSearching.Add(new FileInfo(file));
             }
