@@ -11,6 +11,7 @@ namespace Rationals
         public int Numerator { get; private set; }
         public int Denominator { get; private set; }
         public double ToDouble { get { return (double)Numerator / Denominator; } }
+        public int ToInt { get { return (int)Numerator / Denominator; } }
 
         //constructors
         public Rational(int numerator, int denominator)
@@ -50,14 +51,21 @@ namespace Rationals
             return obj1.Mul(wasReplaced);
         }
 
-        public static implicit operator Rational(int fromInteger)
-        {
-            return new Rational(fromInteger);
-        }
-
         public static explicit operator double(Rational obj)
         {
             return obj.ToDouble;
+        }
+
+        public static explicit operator int(Rational obj)
+        {
+            return obj.ToInt;
+
+        }
+
+        public static implicit operator Rational(int fromInteger)
+        {
+            return new Rational(fromInteger);
+
         }
 
 
