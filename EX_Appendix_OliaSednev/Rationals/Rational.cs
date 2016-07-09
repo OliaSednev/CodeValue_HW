@@ -114,7 +114,7 @@ namespace Rationals
 
         public override string ToString()
         {
-            return string.Format("The value is: {0} / {1} = {2}", Numerator, Denominator, ToDouble);
+            return string.Format("The result is: {0} / {1} = {2}", Numerator, Denominator, ToDouble);
         }
     }
 }

@@ -18,36 +18,36 @@ namespace Rationals
                 Rational results = new Rational();
 
                 Console.WriteLine("operator +");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 results = rational1 + rational2;
                 Console.WriteLine(results.ToString());
 
                 Console.WriteLine("\noperator -");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 results = rational1 - rational2;
                 Console.WriteLine(results.ToString());
 
                 Console.WriteLine("\noperator *");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 results = rational1 * rational2;
                 Console.WriteLine(results.ToString());
 
                 Console.WriteLine("\noperator /");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 results = rational1 / rational2;
                 Console.WriteLine(results.ToString());
 
 
                 Console.WriteLine("\nDouble explicit ");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 Console.WriteLine((double)new Rational(13, 3));
 
                 Console.WriteLine("\nInt explicit ");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 Console.WriteLine((int)new Rational(13, 3));
 
                 Console.WriteLine("\nFrom integer ");
-                Console.WriteLine("**************");
+                Console.WriteLine("*****************************");
                 Console.WriteLine(new Rational(9, 3));
                 Console.WriteLine();
 
