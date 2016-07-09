@@ -50,6 +50,16 @@ namespace Rationals
             return obj1.Mul(wasReplaced);
         }
 
+        public static implicit operator Rational(int fromInteger)
+        {
+            return new Rational(fromInteger);
+        }
+
+        public static explicit operator double(Rational obj)
+        {
+            return obj.ToDouble;
+        }
+
 
         public Rational Add(Rational obj)
         {
@@ -96,18 +106,7 @@ namespace Rationals
 
         public override string ToString()
         {
-            return string.Format("The Result is: {0} / {1} = {2}", Numerator, Denominator, ToDouble);
-        }
-
-
-        public static implicit operator Rational(int fromInteger)
-        {
-            return new Rational(fromInteger);
-        }
-
-        public static explicit operator double(Rational obj)
-        {
-            return obj.ToDouble;
+            return string.Format("The value is: {0} / {1} = {2}", Numerator, Denominator, ToDouble);
         }
     }
 }
