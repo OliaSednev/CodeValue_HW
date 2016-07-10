@@ -18,7 +18,7 @@ namespace Rationals
         {
             if (denominator == 0)
             {
-                throw new DivideByZeroException("Divide by zero!!!");
+                throw new DivideByZeroException();
             }
             else
             {
@@ -36,8 +36,7 @@ namespace Rationals
 
         public static Rational operator -(Rational obj1, Rational obj2)
         {
-            var addMinusToObj2 = new Rational(-obj2.Numerator, obj2.Denominator);
-            return obj1.Add(addMinusToObj2);
+            return obj1.Add(new Rational(-obj2.Numerator, obj2.Denominator));
         }
 
         public static Rational operator *(Rational obj1, Rational obj2)
