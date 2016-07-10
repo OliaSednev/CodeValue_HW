@@ -61,9 +61,9 @@ namespace Rationals
 
         }
 
-        public static implicit operator Rational(int fromInteger)
+        public static implicit operator Rational(int obj)
         {
-            return new Rational(fromInteger);
+            return new Rational(obj);
 
         }
 
