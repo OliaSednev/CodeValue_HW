@@ -8,7 +8,7 @@ using System.Reflection;
 namespace AttribDemo
 {
     [AttributeUsage(AttributeTargets.Struct | AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-    public  sealed class CodeReviewAttribute: System.Attribute
+    public sealed class CodeReviewAttribute: System.Attribute
     {
         public string Name { get; set; }
         public string Date { get; set; }
