@@ -14,7 +14,7 @@ namespace DynInvoke
         private static string InvokeHello(object obj, string inputString)
         {
             return obj.GetType().InvokeMember("Hello", BindingFlags.InvokeMethod, null, obj,
-                new object[] {inputString}).ToString();
+                new object[] { inputString }).ToString();
         }
         static void Main(string[] args)
         {
