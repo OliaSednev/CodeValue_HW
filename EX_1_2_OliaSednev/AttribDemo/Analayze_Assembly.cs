@@ -9,7 +9,6 @@ namespace AttribDemo
 {
     class Analayze_Assembly
     {
-        private List<CodeReviewAttribute> aa;
         public bool AnalayzeAssembly(Assembly assembly)
         {
             if (assembly == null) throw new ArgumentNullException(nameof(assembly));
