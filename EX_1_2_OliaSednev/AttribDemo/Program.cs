@@ -13,11 +13,11 @@ namespace AttribDemo
         {
             try
             {
-                Analayze_Assembly _Assembly = new Analayze_Assembly();
-                Console.WriteLine(_Assembly.AnalayzeAssembly(Assembly.GetExecutingAssembly()));
+                Analayze_Assembly myAssembly = new Analayze_Assembly();
+                Console.WriteLine(myAssembly.AnalayzeAssembly(Assembly.GetExecutingAssembly()));
 
                 //1.2 - 10) The attributes that I looking could not find in Int Assembly
-                Console.WriteLine(_Assembly.AnalayzeAssembly(typeof(int).Assembly).ToString());
+                Console.WriteLine(myAssembly.AnalayzeAssembly(typeof(int).Assembly).ToString());
 
             }
             catch (ArgumentNullException e)
