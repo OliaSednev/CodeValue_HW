@@ -38,16 +38,13 @@ namespace XLinq
                         new XAttribute("Type", paramater.ParameterType)))))));
             xml.Save("ClassesInMscorelib.xml");
 
-
-
-
             Console.WriteLine("--==types With No Property==--\n");
             var typesWithNoProperty = (from type in xml.Descendants("Type")
-                let xElement = type.Element("Properties")
-                let typeName = (string)type.Attribute("FullName")
-                         orderby typeName
-                         where xElement != null && !xElement.HasElements
-                         select typeName).ToList();
+                                       let xElement = type.Element("Properties")
+                                       let typeName = (string)type.Attribute("FullName")
+                                       orderby typeName
+                                       where xElement != null && !xElement.HasElements
+                                       select typeName).ToList();
 
             foreach (var item in typesWithNoProperty)
             {
@@ -86,8 +83,23 @@ namespace XLinq
             sortingTypes.Save("SortedXML.xml");
             Console.WriteLine(sortingTypes);
 
-
-
+            Console.WriteLine("--==Group by the number of methods==--");
+            var sortingGroups = from type in xml.Descendants("Type")
+                                orderby type.Attribute("FullName").Value
+                                group type by type.Descendants("Method").Count()
+                                into groups
+                                orderby groups.Key descending
+                                select groups;
+            foreach (var groups in sortingGroups)
+            {
+                Console.WriteLine($"Number Of methods in the classes: {groups.Key}");
+                Console.WriteLine("--------------------------------------------------");
+                foreach (var type in groups)
+                {
+                    Console.WriteLine($"The class {type.Attribute("FullName")}");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
