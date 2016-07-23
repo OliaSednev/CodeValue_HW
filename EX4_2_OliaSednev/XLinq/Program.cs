@@ -74,7 +74,17 @@ namespace XLinq
             Console.WriteLine($"The most common type as parameter is {commonTypeAsParameter.FirstOrDefault()}");
 
 
+            Console.WriteLine("--==Sorting==--");
+            var sortingTypes = new XElement("Types",
+                from type in xml.Descendants("Type")
+                orderby type.Descendants("Method").Count() descending
+                select new XElement("Type",
+                new XAttribute("Name", type.Attribute("FullName").Value),
+                new XAttribute("SumOfMethods", type.Descendants("Method").Count()),
+                new XAttribute("SumOfProperties", type.Descendants("Property").Count())));
 
+            sortingTypes.Save("SortedXML.xml");
+            Console.WriteLine(sortingTypes);
 
 
 
