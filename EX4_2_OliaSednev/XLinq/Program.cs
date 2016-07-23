@@ -61,13 +61,11 @@ namespace XLinq
             Console.WriteLine("--==Statistics==--");
             int propertiesCount = xml.Descendants("Property").Count();
             Console.WriteLine($"There are {propertiesCount} properties");
-
-            var commonTypeAsParameter =
-                from parameter in xml.Descendants("Parameter")
-                group parameter by parameter.Attribute("Type").Value
-                into array
-                orderby array.Count() descending
-                select array.Key;
+            var commonTypeAsParameter = from parameter in xml.Descendants("Parameter")
+                                        group parameter by parameter.Attribute("Type").Value
+                                        into array
+                                        orderby array.Count() descending
+                                        select array.Key;
             Console.WriteLine($"The most common type as parameter is {commonTypeAsParameter.FirstOrDefault()}");
 
 
@@ -82,6 +80,7 @@ namespace XLinq
 
             sortingTypes.Save("SortedXML.xml");
             Console.WriteLine(sortingTypes);
+
 
             Console.WriteLine("--==Group by the number of methods==--");
             var sortingGroups = from type in xml.Descendants("Type")
