@@ -59,7 +59,7 @@ namespace XLinq
 
         }
 
-        public void sortingGroups(XElement xml)
+        public void SortingGroups(XElement xml)
         {
             var sortingGroups = from type in xml.Descendants("Type")
                                 orderby type.Attribute("FullName").Value

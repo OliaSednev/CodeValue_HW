@@ -40,20 +40,20 @@ namespace XLinq
 
             var query = new Queries();
 
-            Console.WriteLine("--==types With No Property==--\n");
+            Console.WriteLine("--==Types With no Property==--\n");
             query.TypesWithNoProperty(xml);
 
-            Console.WriteLine("--==Methods count==--");
+            Console.WriteLine("--==Methods counter==--");
             query.MethodsCounter(xml);
 
-            Console.WriteLine("--==Statistics==--");
+            Console.WriteLine("--==Properties counter==--");
             query.PropertiesCounter(xml);
 
-            Console.WriteLine("--==Sorting==--");
+            Console.WriteLine("--==Sorting types==--");
             query.SortingTypes(xml);
 
-            Console.WriteLine("--==Group by the number of methods==--");
-            query.sortingGroups(xml);
+            Console.WriteLine("--==Sorting Groups==--");
+            query.SortingGroups(xml);
 
         }
     }
