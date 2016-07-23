@@ -65,19 +65,15 @@ namespace XLinq
             int propertiesCount = xml.Descendants("Property").Count();
             Console.WriteLine($"There are {propertiesCount} properties");
 
-            var commonTypeAsParameter = 
-                (from parameter in xml.Descendants("Parameter")
-                 group parameter by parameter.Attribute("Type").Value into Array
-                 let item = new
-                 {
-                     Names = Array.Key,
-                     Count = Array.Count()
-                 }
-                 orderby item.Count descending
-                 select item).FirstOrDefault();
+            var commonTypeAsParameter =
+                from parameter in xml.Descendants("Parameter")
+                group parameter by parameter.Attribute("Type").Value
+                into array
+                orderby array.Count() descending
+                select array.Key;
+            Console.WriteLine($"The most common type as parameter is {commonTypeAsParameter.FirstOrDefault()}");
 
-            
-           
+
 
 
 
