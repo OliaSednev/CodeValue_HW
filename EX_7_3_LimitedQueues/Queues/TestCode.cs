@@ -21,8 +21,8 @@ namespace Queues
                     Console.WriteLine($"Added to queue: {number} .");
 
                     await Task.Delay(2000);
-                    var dequeueNumber = queue.Deque();
-                    Console.WriteLine($"Removed from queue: {dequeueNumber} .");
+                    var dequeNumber = queue.Deque();
+                    Console.WriteLine($"Removed from queue: {dequeNumber} .");
                 });
             }
         }
