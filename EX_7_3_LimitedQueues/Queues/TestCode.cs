@@ -14,17 +14,13 @@ namespace Queues
             for (int i = 1; i <= 20; i++)
             {
                 var number = i;
-                Task.Run(() =>
-                {
-                    queue.Enque(number);
-                    Console.WriteLine($"Added to queue: {number} .");
 
-                });
-
-                Task.Run(async() =>
+                Task.Run(async () =>
                 {
                     try
                     {
+                        queue.Enque(number);
+                        Console.WriteLine($"Added to queue: {number} .");
                         await Task.Delay(2000);
                         var dequeueItem = queue.Deque();
                         Console.WriteLine($"Removed from queue: {dequeueItem} .");
