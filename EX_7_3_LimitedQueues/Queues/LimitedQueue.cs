@@ -12,12 +12,13 @@ namespace Queues
     {
         private Queue<T> queue = new Queue<T>();
         private SemaphoreSlim semaphore;
-        private object _lock = new object();
         private ReaderWriterLockSlim writerLock = new ReaderWriterLockSlim();
 
         public LimitedQueue(int maxQueueSize)
         {
+            //queue = new Queue<T>();
             semaphore = new SemaphoreSlim(maxQueueSize);
+            //writerLock = new ReaderWriterLockSlim();
         }
 
         public void Enque(T value)
