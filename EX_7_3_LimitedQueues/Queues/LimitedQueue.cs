@@ -16,9 +16,7 @@ namespace Queues
 
         public LimitedQueue(int maxQueueSize)
         {
-            //queue = new Queue<T>();
             semaphore = new SemaphoreSlim(maxQueueSize);
-            //writerLock = new ReaderWriterLockSlim();
         }
 
         public void Enque(T value)
