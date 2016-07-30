@@ -12,7 +12,7 @@ namespace Queues
     {
         private Queue<T> queue = new Queue<T>();
         private SemaphoreSlim semaphore;
-        private object _lock =new object();
+        private object _lock = new object();
         private ReaderWriterLockSlim writerLock = new ReaderWriterLockSlim();
 
         public LimitedQueue(int maxQueueSize)
@@ -22,23 +22,36 @@ namespace Queues
 
         public void Enque(T obj)
         {
-            semaphore.Wait();
-            writerLock.EnterWriteLock();
-            queue.Enqueue(obj);
-            writerLock.ExitWriteLock();
+
+            try
+            {
+                semaphore.Wait();
+                writerLock.TryEnterWriteLock(-1);
+                //writerLock.EnterWriteLock();
+                queue.Enqueue(obj);
+            }
+            finally
+            {
+                writerLock.ExitWriteLock();
+            }
         }
 
         public T Deque()
         {
-            T value;
-            lock (_lock)
+            try
             {
-                value = queue.Dequeue();
+                writerLock.TryEnterWriteLock(-1);
+                //writerLock.EnterWriteLock();
+                var obj = queue.Dequeue();
                 semaphore.Release();
+                return obj;
             }
-            return value;
+            finally
+            {
+                writerLock.ExitWriteLock();
+            }
         }
 
-        public int Count => queue.Count;
+
     }
 }
