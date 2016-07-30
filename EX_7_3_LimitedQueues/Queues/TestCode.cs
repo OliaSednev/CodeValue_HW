@@ -25,7 +25,7 @@ namespace Queues
                 {
                     try
                     {
-                        await Task.Delay(500);
+                        await Task.Delay(1000);
                         var dequeueItem = queue.Deque();
                         Console.WriteLine($"Removed {dequeueItem} from queue");
 
