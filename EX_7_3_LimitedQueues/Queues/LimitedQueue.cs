@@ -20,15 +20,13 @@ namespace Queues
             semaphore = new SemaphoreSlim(maxQueueSize);
         }
 
-        public void Enque(T obj)
+        public void Enque(T value)
         {
-
+            semaphore.Wait();
             try
             {
-                semaphore.Wait();
-                writerLock.TryEnterWriteLock(-1);
-                //writerLock.EnterWriteLock();
-                queue.Enqueue(obj);
+                writerLock.TryEnterWriteLock(-1);               
+                queue.Enqueue(value);
             }
             finally
             {
@@ -41,10 +39,8 @@ namespace Queues
             try
             {
                 writerLock.TryEnterWriteLock(-1);
-                //writerLock.EnterWriteLock();
-                var obj = queue.Dequeue();
                 semaphore.Release();
-                return obj;
+                return queue.Dequeue();
             }
             finally
             {

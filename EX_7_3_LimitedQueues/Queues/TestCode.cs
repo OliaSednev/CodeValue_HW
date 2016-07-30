@@ -13,21 +13,21 @@ namespace Queues
             LimitedQueue<int> queue = new LimitedQueue<int>(10);
             for (int i = 1; i <= 20; i++)
             {
-                var item = i;
+                var number = i;
                 Task.Run(() =>
                 {
-                    queue.Enque(item);
-                    Console.WriteLine($"Added {item} to queue");
+                    queue.Enque(number);
+                    Console.WriteLine($"Added to queue: {number} .");
 
                 });
 
-                Task.Run(async () =>
+                Task.Run(async() =>
                 {
                     try
                     {
-                        await Task.Delay(1000);
+                        await Task.Delay(2000);
                         var dequeueItem = queue.Deque();
-                        Console.WriteLine($"Removed {dequeueItem} from queue");
+                        Console.WriteLine($"Removed from queue: {dequeueItem} .");
 
                     }
                     catch (InvalidOperationException e)
