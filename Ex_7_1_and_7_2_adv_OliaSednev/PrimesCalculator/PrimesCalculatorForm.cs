@@ -34,20 +34,24 @@ namespace PrimesCalculator
             var tokenSource = cancellationTokenSource.Token;
             
             bool isOk = int.TryParse(first_txtBox.Text, out first) &&
-                int.TryParse(last_textBox.Text, out last);
+                int.TryParse(last_textBox.Text, out last) &&
+                first > -1 && last > -1;
             if (!isOk)
             {
-                MessageBox.Show("Enter numbers only!!!");
+                MessageBox.Show("Please enter only positive numbers!!!");
+            }
+            else
+            {
+                Task.Run(() =>
+                {
+                    var p = primesCalculator.PrimesCalculator(first, last, tokenSource.WaitHandle);
+                    primesCollection = new ObservableCollection<int>(p);
+
+                    UpdateCollection(primesCollection);
+
+                }, tokenSource);
             }
 
-            Task.Run(() =>
-            {
-                var p = primesCalculator.PrimesCalculator(first, last, tokenSource.WaitHandle);
-                primesCollection= new ObservableCollection<int>(p);
-
-                UpdateCollection(primesCollection);
-
-            }, tokenSource);
         }
 
 

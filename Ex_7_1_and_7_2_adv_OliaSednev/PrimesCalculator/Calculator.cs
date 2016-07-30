@@ -13,13 +13,19 @@ namespace PrimesCalculator
 
         public IEnumerable<int> PrimesCalculator(int first, int last, WaitHandle handle)
         {
+
             List<int> listOfPrimesNumbers = new List<int>();
+            if (first <= 1 && last <= 1)
+            {
+                return listOfPrimesNumbers = null;
+            }
             for (int i = first; i <= last; i++)
             {
                 if (handle != null && handle.WaitOne(0))
                 {
                     break;
                 }
+                if (i == 0) { i = 2; }
                 if (i == 1) { i++; }
                 if (IsPrime(i))
                 {
