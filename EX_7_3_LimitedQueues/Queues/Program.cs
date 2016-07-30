@@ -10,7 +10,7 @@ namespace Queues
     {
         static void Main(string[] args)
         {
-            TestCode testCode=new TestCode();
+            TestCode testCode = new TestCode();
             testCode.TestingCode();
             Console.ReadLine();
         }
