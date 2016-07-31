@@ -31,7 +31,7 @@ namespace SyncDemo
                     mutex.ReleaseMutex();
                 }
             }
-            Console.WriteLine("Done.");
+            Console.WriteLine("Done!!!");
         }
     }
 }
