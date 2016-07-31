@@ -18,13 +18,18 @@ namespace SyncDemo
 
             for (int i = 0; i < 10000; i++)
             {
-                mutex.WaitOne();
+                
                 try
                 {
+                    mutex.WaitOne();
                     using (StreamWriter writer = new StreamWriter(@"c:\temp\data.txt", true))
                     {
                         writer.WriteLine("Writing from process " + Process.GetCurrentProcess().Id);
                     }
+                }
+                catch (UnauthorizedAccessException e)
+                {
+                    Console.WriteLine($"Exception: {e.Message}");
                 }
                 finally
                 {
@@ -32,6 +37,8 @@ namespace SyncDemo
                 }
             }
             Console.WriteLine("Done!!!");
+
         }
     }
 }
+
