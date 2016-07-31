@@ -21,7 +21,7 @@ namespace SyncDemo
                 mutex.WaitOne();
                 try
                 {
-                    using (StreamWriter writer = new StreamWriter(@"c:\temp\myTest.txt", true))
+                    using (StreamWriter writer = new StreamWriter(@"c:\temp\data.txt", true))
                     {
                         writer.WriteLine("Writing from process " + Process.GetCurrentProcess().Id);
                     }
