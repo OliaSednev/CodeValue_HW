@@ -13,7 +13,7 @@ namespace SyncDemo
     {
         static void Main(string[] args)
         {
-            Mutex mutex = new Mutex(false, "MySyncMutex");
+            Mutex mutex = new Mutex(false, "SyncMutex");
             Console.WriteLine($"\nPlease wait, Process ID: {Process.GetCurrentProcess().Id} Write in to the file...");
 
             for (int i = 0; i < 10000; i++)
