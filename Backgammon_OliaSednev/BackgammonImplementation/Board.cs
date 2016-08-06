@@ -19,7 +19,6 @@ namespace BackgammonImplementation
             TokensInTheJail_X = 0;
             TokensInTheJail_O = 0;
             BoardInitializer();
-
         }
         public void BoardInitializer()
         {
