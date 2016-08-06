@@ -12,6 +12,7 @@ namespace BackgammonImplementation
         public int SumOfTokens { get; set; }
         public Token? TokenType { get; set; } //can be nullable
         public BoardCell() { } //for empty initial cells
+
         public BoardCell(int sum, Token token)
         {
             SumOfTokens = sum;

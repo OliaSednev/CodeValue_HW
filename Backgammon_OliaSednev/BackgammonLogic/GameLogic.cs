@@ -107,8 +107,6 @@ namespace BackgammonLogic
             }
         }
 
-
-
         public bool LegalOption(int source)
         {
             return X_Player.MyTurn ? IsItLegalOption(source, X_Player) : IsItLegalOption(source, O_Player);
@@ -508,6 +506,7 @@ namespace BackgammonLogic
         {
             return player.TokenOfPlayer == Token.X ? ExitMovesOfPlayer(X_Player, 18, 23) : ExitMovesOfPlayer(O_Player, 0, 5);
         }
+
         public IEnumerable<KeyValuePair<int, int>> ExitMovesOfPlayer(IPlayer player, int lowRange, int hightRange)
         {
             var legalMoves = new List<KeyValuePair<int, int>>();
@@ -563,7 +562,6 @@ namespace BackgammonLogic
             return X_Player.MyTurn ? ThereAreLegalExitMoves(X_Player) :
                 ThereAreLegalExitMoves(O_Player);
         }
-
     }
 }
 
