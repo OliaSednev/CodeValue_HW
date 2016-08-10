@@ -24,7 +24,6 @@ namespace ProjectBuilder
             stopwatchw.Restart();
             Concurrently();
             stopwatchw.Stop();
-
         }
         static void Builder(int numProject)
         {
@@ -53,8 +52,6 @@ namespace ProjectBuilder
             Task task7 = Task.Factory.ContinueWhenAll(new Task[] { task5, task6 }, project => Builder(7));
             Task task8 = task5.ContinueWith(project => Builder(8));
             Task.WaitAll(task5, task6, task7, task8);
-
-
         }
     }
 }
