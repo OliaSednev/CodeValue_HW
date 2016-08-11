@@ -27,7 +27,7 @@ namespace PrimesCalculator
                 }
                 if (i == 0) { i = 2; }
                 if (i == 1) { i++; }
-                if (IsPrime(i))
+                if (IsPrime(i) )//&& i > 1)
                 {
                     listOfPrimesNumbers.Add(i);
                 }
