@@ -40,7 +40,6 @@ namespace CustomAwaiter
                 Console.WriteLine($"Could not start process: {exception.Message}");
             }
             Console.WriteLine("Continue . . . ");
-            
 
         }
     }
