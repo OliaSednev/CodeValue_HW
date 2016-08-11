@@ -10,7 +10,6 @@ namespace PrimesCalculator
 {
     class Calculator
     {
-
         public IEnumerable<int> PrimesCalculator(int first, int last, WaitHandle handle)
         {
 
@@ -25,9 +24,9 @@ namespace PrimesCalculator
                 {
                     break;
                 }
-                if (i == 0) { i = 2; }
-                if (i == 1) { i++; }
-                if (IsPrime(i) )//&& i > 1)
+                //if (i == 0) { i = 2; }
+                //if (i == 1) { i++; }
+                if (IsPrime(i) && i > 1)
                 {
                     listOfPrimesNumbers.Add(i);
                 }
