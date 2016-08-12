@@ -36,6 +36,11 @@
             this.first_label = new System.Windows.Forms.Label();
             this.last_label = new System.Windows.Forms.Label();
             this.cancel_button = new System.Windows.Forms.Button();
+            this.outputFile_label = new System.Windows.Forms.Label();
+            this.outputFile_textBox = new System.Windows.Forms.TextBox();
+            this.primesCount_label = new System.Windows.Forms.Label();
+            this.numbers_label = new System.Windows.Forms.Label();
+            this.primesCounter_textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // first_txtBox
@@ -70,7 +75,7 @@
             this.result.ItemHeight = 31;
             this.result.Location = new System.Drawing.Point(12, 298);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(447, 438);
+            this.result.Size = new System.Drawing.Size(733, 500);
             this.result.TabIndex = 3;
             this.result.SelectedIndexChanged += new System.EventHandler(this.result_SelectedIndexChanged);
             // 
@@ -111,11 +116,57 @@
             this.cancel_button.UseVisualStyleBackColor = true;
             this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
+            // outputFile_label
+            // 
+            this.outputFile_label.AutoSize = true;
+            this.outputFile_label.Location = new System.Drawing.Point(6, 905);
+            this.outputFile_label.Name = "outputFile_label";
+            this.outputFile_label.Size = new System.Drawing.Size(154, 32);
+            this.outputFile_label.TabIndex = 8;
+            this.outputFile_label.Text = "Output file:";
+            // 
+            // outputFile_textBox
+            // 
+            this.outputFile_textBox.Location = new System.Drawing.Point(188, 899);
+            this.outputFile_textBox.Name = "outputFile_textBox";
+            this.outputFile_textBox.Size = new System.Drawing.Size(557, 38);
+            this.outputFile_textBox.TabIndex = 9;
+            // 
+            // primesCount_label
+            // 
+            this.primesCount_label.AutoSize = true;
+            this.primesCount_label.Location = new System.Drawing.Point(18, 824);
+            this.primesCount_label.Name = "primesCount_label";
+            this.primesCount_label.Size = new System.Drawing.Size(223, 32);
+            this.primesCount_label.TabIndex = 10;
+            this.primesCount_label.Text = "Was calculated :";
+            // 
+            // numbers_label
+            // 
+            this.numbers_label.AutoSize = true;
+            this.numbers_label.Location = new System.Drawing.Point(473, 824);
+            this.numbers_label.Name = "numbers_label";
+            this.numbers_label.Size = new System.Drawing.Size(203, 32);
+            this.numbers_label.TabIndex = 11;
+            this.numbers_label.Text = "prime numbers";
+            // 
+            // primesCounter_textBox1
+            // 
+            this.primesCounter_textBox1.Location = new System.Drawing.Point(248, 817);
+            this.primesCounter_textBox1.Name = "primesCounter_textBox1";
+            this.primesCounter_textBox1.Size = new System.Drawing.Size(219, 38);
+            this.primesCounter_textBox1.TabIndex = 12;
+            // 
             // PrimesCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 826);
+            this.ClientSize = new System.Drawing.Size(807, 1027);
+            this.Controls.Add(this.primesCounter_textBox1);
+            this.Controls.Add(this.numbers_label);
+            this.Controls.Add(this.primesCount_label);
+            this.Controls.Add(this.outputFile_textBox);
+            this.Controls.Add(this.outputFile_label);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.last_label);
             this.Controls.Add(this.first_label);
@@ -142,6 +193,11 @@
         private System.Windows.Forms.Label first_label;
         private System.Windows.Forms.Label last_label;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Label outputFile_label;
+        private System.Windows.Forms.TextBox outputFile_textBox;
+        private System.Windows.Forms.Label primesCount_label;
+        private System.Windows.Forms.Label numbers_label;
+        private System.Windows.Forms.TextBox primesCounter_textBox1;
     }
 }
 
