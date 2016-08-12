@@ -75,14 +75,14 @@ namespace PrimesCalculator
         private void UpdateCollection(IEnumerable<int> list)
         {
             result.Items.Clear();
-            //calculate_button.Enabled = false;
+
             result.BeginUpdate();
             foreach (int i in list)
             {
                 result.Items.Add(i);
             }
             result.EndUpdate();
-            //calculate_button.Enabled = true;
+            calculate_button.Enabled = true;
         }
 
         private void result_SelectedIndexChanged(object sender, EventArgs e)
