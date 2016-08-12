@@ -18,14 +18,24 @@ namespace ProjectBuilder
         }
         public void Sequentially()
         {
-            Builder(1);
-            Builder(2);
-            Builder(3);
-            Builder(4);
-            Builder(5);
-            Builder(6);
-            Builder(7);
-            Builder(8);
+            Task task_1 = Task.Factory.StartNew(() => Builder(1));
+            Task task_2 = task_1.ContinueWith(project => Builder(2));
+            Task task_3 = task_2.ContinueWith(project => Builder(3));
+            Task task_4 = task_3.ContinueWith(project => Builder(4));
+            Task task_5 = task_4.ContinueWith(project => Builder(5));
+            Task task_6 = task_5.ContinueWith(project => Builder(6));
+            Task task_7 = task_6.ContinueWith(project => Builder(7));
+            Task task_8 = task_7.ContinueWith(project => Builder(8));
+            Task.WaitAll(task_8);
+
+
+
+            //for (int i = 1; i < 8; i++)
+            //{
+            //    taskNumber = i;
+            //    Task (taskNumber++) = (taskNumber).
+            //}
+
         }
         public void Concurrently()
         {
