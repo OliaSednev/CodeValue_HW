@@ -73,9 +73,9 @@
             // 
             this.result.FormattingEnabled = true;
             this.result.ItemHeight = 31;
-            this.result.Location = new System.Drawing.Point(12, 298);
+            this.result.Location = new System.Drawing.Point(18, 288);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(733, 500);
+            this.result.Size = new System.Drawing.Size(447, 500);
             this.result.TabIndex = 3;
             this.result.SelectedIndexChanged += new System.EventHandler(this.result_SelectedIndexChanged);
             // 
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 1027);
+            this.ClientSize = new System.Drawing.Size(767, 1027);
             this.Controls.Add(this.primesCounter_textBox1);
             this.Controls.Add(this.numbers_label);
             this.Controls.Add(this.primesCount_label);
