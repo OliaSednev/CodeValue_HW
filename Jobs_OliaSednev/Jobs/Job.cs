@@ -101,7 +101,6 @@ namespace Jobs
 
         protected virtual void Dispose(bool disposing)
         {
-            CheckIfDisposed();
             if (!disposedValue)
             {
                 if (disposing)
