@@ -19,7 +19,8 @@ namespace PrimesCalculator
         private ObservableCollection<int> primesCollection = new ObservableCollection<int>();
         private readonly Calculator primesCalculator = new Calculator();
         private readonly CancellationTokenSource cancellationTokenSource= new CancellationTokenSource();
-        
+       
+
         public PrimesCalculatorForm()
         {
             InitializeComponent();
@@ -94,6 +95,7 @@ namespace PrimesCalculator
             result.EndUpdate();
             calculate_button.Enabled = true;
         }
+
 
         private void result_SelectedIndexChanged(object sender, EventArgs e)
         {
