@@ -35,7 +35,7 @@ namespace PrimesCalculator
                         first > -1 && last > -1 && first != last && first < last;
             if (!isOk)
             {
-                MessageBox.Show("Please enter only positive numbers, when first and last not the same number!!!");
+                MessageBox.Show("Please enter only positive numbers, when first and last not the same number and first number is smaller than the last!!!");
             }
             else
             {
