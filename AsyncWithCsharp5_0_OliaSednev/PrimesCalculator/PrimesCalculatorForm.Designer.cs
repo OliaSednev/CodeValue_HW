@@ -129,6 +129,7 @@
             this.outputFile_textBox.Name = "outputFile_textBox";
             this.outputFile_textBox.Size = new System.Drawing.Size(277, 38);
             this.outputFile_textBox.TabIndex = 9;
+            this.outputFile_textBox.Text = "D:\\results";
             // 
             // count_label
             // 
