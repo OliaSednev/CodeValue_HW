@@ -28,14 +28,6 @@ namespace ProjectBuilder
             Task task_8 = task_7.ContinueWith(project => Builder(8));
             Task.WaitAll(task_8);
 
-
-
-            //for (int i = 1; i < 8; i++)
-            //{
-            //    taskNumber = i;
-            //    Task (taskNumber++) = (taskNumber).
-            //}
-
         }
         public void Concurrently()
         {
@@ -47,7 +39,7 @@ namespace ProjectBuilder
             Task task_6 = Task.Factory.ContinueWhenAll(new Task[] { task_3, task_4 }, projects => Builder(6));
             Task task_7 = Task.Factory.ContinueWhenAll(new Task[] { task_5, task_6 }, projects => Builder(7));
             Task task_8 = task_5.ContinueWith(project => Builder(8));
-            Task.WaitAll(task_5, task_6, task_7, task_8);
+            Task.WaitAll(task_7, task_8);
         }
     }
 }
