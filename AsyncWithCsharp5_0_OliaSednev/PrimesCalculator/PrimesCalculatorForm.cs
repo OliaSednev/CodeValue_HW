@@ -55,7 +55,7 @@ namespace PrimesCalculator
             primesCollection = new ObservableCollection<int>(result);
 
             UpdateCollection(primesCollection);
-            count_label.Text = "Count:" + primesCollection.Count;
+            count_label.Text = "Count: " + primesCollection.Count;
             if (!string.IsNullOrEmpty(outputFile_textBox.Text))
             {
                 WriteResultToAFile(outputFile_textBox.Text, primesCollection.Count);
