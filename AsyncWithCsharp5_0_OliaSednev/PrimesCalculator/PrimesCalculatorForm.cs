@@ -64,9 +64,9 @@ namespace PrimesCalculator
 
         private void WriteResultToAFile(string filePath, int count)
         {
-            using (var writer = File.AppendText(filePath + ".txt"))
+            using (var appendText = File.AppendText(filePath + ".txt"))
             {
-                writer.WriteLine("There are "+ count +" prime numbers in the current range");
+                appendText.WriteLine("There are "+ count +" prime numbers in the current range");
             }
         }
 
