@@ -14,9 +14,9 @@ namespace Jobs
             Job job = new Job("pro", 1);
             Console.WriteLine("My processes was opened");
             Process.Start("notepad");
-            Process.Start("wordpad");
+            Process.Start("word");
             job.AddProcessToJob(Process.GetProcessesByName("notepad")[0]);
-            job.AddProcessToJob(Process.GetProcessesByName("wordpad")[0]);
+            job.AddProcessToJob(Process.GetProcessesByName("word")[0]);
 
             Console.WriteLine("For kill the processes, press Enter . . .");
             Console.ReadLine();
