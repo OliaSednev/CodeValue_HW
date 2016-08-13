@@ -18,7 +18,7 @@ namespace Jobs
             job.AddProcessToJob(Process.GetProcessesByName("notepad")[0]);
             job.AddProcessToJob(Process.GetProcessesByName("wordpad")[0]);
 
-            Console.WriteLine("For kill the processes press Enter . . .");
+            Console.WriteLine("For kill the processes, press Enter . . .");
             Console.ReadLine();
             job.Kill();
 
