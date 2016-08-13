@@ -10,54 +10,62 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PrimesCalculator
 {
     public partial class PrimesCalculatorForm : Form
     {
         private ObservableCollection<int> primesCollection = new ObservableCollection<int>();
-        private Calculator primesCalculator = new Calculator();
-        private CancellationTokenSource cancellationTokenSource;
-        private SynchronizationContext synchronizationContext = SynchronizationContext.Current;
+        private readonly Calculator primesCalculator = new Calculator();
+        private readonly CancellationTokenSource cancellationTokenSource= new CancellationTokenSource();
         
         public PrimesCalculatorForm()
         {
             InitializeComponent();
-        }        
-        
-        private void calculate_button_Click(object sender, EventArgs e)
-        {
-            primesCollection.Clear();
-            result.Items.Clear();
-            result.Items.Add("Calculating . . .");
-            calculate_button.Enabled = false;
-
-            int first, last=0;
-            cancellationTokenSource = new CancellationTokenSource();
-            var tokenSource = cancellationTokenSource.Token;
-            
-            bool isOk = int.TryParse(first_txtBox.Text, out first) &&
-                int.TryParse(last_textBox.Text, out last) &&
-                first > -1 && last > -1;
-            if (!isOk)
-            {
-                MessageBox.Show("Please enter only positive numbers!!!");
-            }
-
-            else
-            {
-                Task.Run(() =>
-                {
-                    var p = primesCalculator.PrimesCalculator(first, last, tokenSource.WaitHandle);
-                    primesCollection = new ObservableCollection<int>(p);
-
-                    UpdateCollection(primesCollection);
-
-                }, tokenSource);
-            }
-
         }
 
+        private async void calculate_button_Click(object sender, EventArgs e)
+        {
+            int first, last = 0;
+            var tokenSource = cancellationTokenSource.Token;
+
+            bool isOk = int.TryParse(first_txtBox.Text, out first) &&
+                        int.TryParse(last_textBox.Text, out last) &&
+                        first > -1 && last > -1 && first != last;
+            if (!isOk)
+            {
+                MessageBox.Show("Please enter only positive numbers, when first and last not the same number!!!");
+                result.Items.Clear();
+
+            }
+            primesCollection.Clear();
+            result.Items.Clear();
+            calculate_button.Enabled = false;
+            result.Items.Add("Calculating . . .");
+            await PrimesCalc(first, last, tokenSource.WaitHandle);
+            calculate_button.Enabled = true;
+        }
+
+        private async Task PrimesCalc(int first, int last, WaitHandle waitHandle)
+        {
+            var result = await primesCalculator.AsyncCalc(first, last, waitHandle);
+            primesCollection = new ObservableCollection<int>(result);
+            UpdateCollection(primesCollection);
+            count_label.Text = "Count:" + primesCollection.Count;
+            if (!string.IsNullOrEmpty(outputFile_textBox.Text))
+            {
+                WriteResultToAFile(outputFile_textBox.Text, primesCollection.Count);
+            }
+        }
+
+        private void WriteResultToAFile(string filePath, int count)
+        {
+            using (var writer = File.AppendText(filePath + ".txt"))
+            {
+                writer.WriteLine("There are "+ count +" prime numbers in the current range");
+            }
+        }
 
         private void cancel_button_Click(object sender, EventArgs e)
         {
@@ -72,10 +80,10 @@ namespace PrimesCalculator
                 });
             }
         }
+
         private void UpdateCollection(IEnumerable<int> list)
         {
             result.Items.Clear();
-
             result.BeginUpdate();
             foreach (int i in list)
             {

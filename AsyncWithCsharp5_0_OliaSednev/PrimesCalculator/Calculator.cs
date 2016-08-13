@@ -12,7 +12,6 @@ namespace PrimesCalculator
     {
         public IEnumerable<int> PrimesCalculator(int first, int last, WaitHandle handle)
         {
-
             List<int> listOfPrimesNumbers = new List<int>();
             if (first <= 1 && last <= 1)
             {
@@ -42,6 +41,11 @@ namespace PrimesCalculator
                 }
             }
             return true;
+        }
+
+        public async Task<IEnumerable<int>> AsyncCalc(int from, int to, WaitHandle handle)
+        {
+            return await Task.Run(() => PrimesCalculator(from, to, handle));
         }
     }
 }
