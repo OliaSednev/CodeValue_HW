@@ -40,14 +40,12 @@ namespace Jobs
             _processes = new List<Process>();
             GC.AddMemoryPressure(_sizeInByte);
             Console.WriteLine("job was created");
-            Console.WriteLine($"Memory: {GC.GetTotalMemory(false)}");
 
         }
         ~Job()
         {
             GC.RemoveMemoryPressure(_sizeInByte);
             Console.WriteLine("Job was released.");
-            Console.WriteLine("Memory: " + GC.GetTotalMemory(false));
             Dispose(false);
         }
 
@@ -108,7 +106,7 @@ namespace Jobs
                     foreach (var process in _processes)
                     {
                         process.Dispose();
-                    }   
+                    }
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
@@ -116,6 +114,7 @@ namespace Jobs
 
                 NativeJob.CloseHandle(_hJob);
                 disposedValue = true;
+
             }
         }
 
