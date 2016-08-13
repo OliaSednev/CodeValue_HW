@@ -48,6 +48,7 @@ namespace Jobs
             GC.RemoveMemoryPressure(_sizeInByte);
             Console.WriteLine("Job was released.");
             Console.WriteLine("Memory: " + GC.GetTotalMemory(false));
+            Dispose(false);
         }
 
         public Job()
@@ -120,10 +121,11 @@ namespace Jobs
         }
 
         // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-        // ~Job() {
-        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-        //   Dispose(false);
-        // }
+        //~Job()
+        //{
+        //    // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //    Dispose(false);
+        //}
 
         // This code added to correctly implement the disposable pattern.
         public void Dispose()
