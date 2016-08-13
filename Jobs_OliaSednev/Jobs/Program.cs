@@ -11,7 +11,7 @@ namespace Jobs
     {
         static void Main(string[] args)
         {
-            Job job = new Job();
+            Job job = new Job("pro", 1);
             Console.WriteLine("My processes was opened");
             Process.Start("notepad");
             Process.Start("wordpad");
@@ -23,6 +23,12 @@ namespace Jobs
             job.Kill();
 
 
+            Console.WriteLine("In order to continue, press the Enter . . .");
+            Console.ReadLine();
+            for (int i = 0; i < 2; i++)
+            {
+                new Job(10240);
+            }
         }
     }
 }

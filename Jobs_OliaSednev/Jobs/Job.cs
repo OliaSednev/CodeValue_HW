@@ -26,9 +26,11 @@ namespace Jobs
     {
         private readonly IntPtr _hJob;
         private readonly List<Process> _processes;
-        
-        public Job(string name, long sizeInByte)
+        private readonly long _sizeInByte;
+
+        public Job(string name, long size)
         {
+            _sizeInByte = size;
             _hJob = NativeJob.CreateJobObject(IntPtr.Zero, name);
             
             if (_hJob == IntPtr.Zero)
@@ -36,16 +38,30 @@ namespace Jobs
                 throw new InvalidOperationException();
             }
             _processes = new List<Process>();
-            //GC.AddMemoryPressure(sizeInByte);
-            //Console.WriteLine("job was created");
+            GC.AddMemoryPressure(_sizeInByte);
+            Console.WriteLine("job was created");
+            Console.WriteLine($"Memory: {GC.GetTotalMemory(false)}");
+
+        }
+        ~Job()
+        {
+            GC.RemoveMemoryPressure(_sizeInByte);
+            Console.WriteLine("Job was released.");
+            Console.WriteLine("Memory: " + GC.GetTotalMemory(false));
+            //Dispose(false);
         }
 
-        //~job(long sizeInByte)
-        //{
-        //    GC.RemoveMemoryPressure(sizeInBytes);
-        //}
         public Job()
             : this(null, 0)
+        {
+        }
+        public Job(long size)
+            : this(null, size)
+        {
+        }
+
+        public Job(string name)
+            : this(name, 0)
         {
         }
 
