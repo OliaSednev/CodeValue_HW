@@ -25,14 +25,19 @@ namespace Jobs
 
             Console.WriteLine("To create new processes, press Enter . . .");
             Console.ReadLine();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 20; i++)
             {
                 new Job(10240);
             }
             
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 20; i++)
             {
                 new Job(1024);
+            }
+
+            for (int i = 0; i < 20; i++)
+            {
+                new Job(0);
             }
         }
     }
