@@ -43,13 +43,13 @@ namespace Jobs
 
         }
 
-
-        public Job()
-            : this(null, 0)
+        public Job() : this(null, 0)
         {
         }
-        public Job(long size)
-            : this(null, size)
+        public Job(long size) : this(null, size)
+        {
+        }
+        public Job(string name) : this(name, 0)
         {
         }
 
