@@ -35,6 +35,8 @@ namespace Jobs
                 new Job(1024);
             }
 
+            //size have to be positive number bigger than zero
+
             //for (int i = 0; i < 20; i++)
             //{
             //    new Job(0);
