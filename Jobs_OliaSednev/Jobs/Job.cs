@@ -36,8 +36,8 @@ namespace Jobs
                 throw new InvalidOperationException();
             }
             _processes = new List<Process>();
-            GC.AddMemoryPressure(sizeInByte);
-            Console.WriteLine("job was created");
+            //GC.AddMemoryPressure(sizeInByte);
+            //Console.WriteLine("job was created");
         }
 
         //~job(long sizeInByte)
@@ -118,11 +118,6 @@ namespace Jobs
             // TODO: uncomment the following line if the finalizer is overridden above.
             GC.SuppressFinalize(this);
         }
-        //public void DoSomething()
-        //{
-        //    if (disposedValue)
-        //        throw new ObjectDisposedException();
-        //}
         #endregion
 
     }
