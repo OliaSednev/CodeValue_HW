@@ -32,19 +32,20 @@ namespace PrimesCalculator
 
             bool isOk = int.TryParse(first_txtBox.Text, out first) &&
                         int.TryParse(last_textBox.Text, out last) &&
-                        first > -1 && last > -1 && first != last;
+                        first > -1 && last > -1 && first != last && first < last;
             if (!isOk)
             {
                 MessageBox.Show("Please enter only positive numbers, when first and last not the same number!!!");
-                result.Items.Clear();
-
             }
-            primesCollection.Clear();
-            result.Items.Clear();
-            calculate_button.Enabled = false;
-            result.Items.Add("Calculating . . .");
-            await PrimesCalc(first, last, tokenSource.WaitHandle);
-            calculate_button.Enabled = true;
+            else
+            {
+                primesCollection.Clear();
+                result.Items.Clear();
+                calculate_button.Enabled = false;
+                result.Items.Add("Calculating . . .");
+                await PrimesCalc(first, last, tokenSource.WaitHandle);
+                calculate_button.Enabled = true;
+            }
         }
 
         private async Task PrimesCalc(int first, int last, WaitHandle waitHandle)
