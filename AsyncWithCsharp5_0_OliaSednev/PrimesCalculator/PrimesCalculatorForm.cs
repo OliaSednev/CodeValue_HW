@@ -52,6 +52,7 @@ namespace PrimesCalculator
         {
             var result = await primesCalculator.AsyncCalc(first, last, waitHandle);
             primesCollection = new ObservableCollection<int>(result);
+
             UpdateCollection(primesCollection);
             count_label.Text = "Count:" + primesCollection.Count;
             if (!string.IsNullOrEmpty(outputFile_textBox.Text))
