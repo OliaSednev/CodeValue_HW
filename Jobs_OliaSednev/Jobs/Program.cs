@@ -30,10 +30,11 @@ namespace Jobs
                 new Job(10240);
             }
 
-            for (int i = 0; i < 20; i++)
-            {
-                new Job(1);
-            }
+            //have to be positive number
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    new Job(0);
+            //}
         }
     }
 }
