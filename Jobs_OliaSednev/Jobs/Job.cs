@@ -39,7 +39,7 @@ namespace Jobs
             }
             _processes = new List<Process>();
             GC.AddMemoryPressure(_sizeInByte);
-            Console.WriteLine("job was created");
+            Console.WriteLine("job was created.");
 
         }
         ~Job()
@@ -55,11 +55,6 @@ namespace Jobs
         }
         public Job(long size)
             : this(null, size)
-        {
-        }
-
-        public Job(string name)
-            : this(name, 0)
         {
         }
 

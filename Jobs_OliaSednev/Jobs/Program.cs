@@ -27,12 +27,12 @@ namespace Jobs
             Console.ReadLine();
             for (int i = 0; i < 20; i++)
             {
-                new Job(10485760);
+                new Job(1);
             }
             
             for (int i = 0; i < 20; i++)
             {
-                new Job(1048576);
+                new Job(10485760);
             }
 
             //size have to be positive number bigger than zero
