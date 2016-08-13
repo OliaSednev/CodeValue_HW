@@ -48,7 +48,7 @@ namespace Jobs
             GC.RemoveMemoryPressure(_sizeInByte);
             Console.WriteLine("Job was released.");
             Console.WriteLine("Memory: " + GC.GetTotalMemory(false));
-            //Dispose(false);
+            Dispose(false);
         }
 
         public Job()
