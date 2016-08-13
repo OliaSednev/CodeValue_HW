@@ -12,10 +12,13 @@ namespace Jobs
         static void Main(string[] args)
         {
             Job job = new Job();
+            Console.WriteLine("My processes was opened");
             Process.Start("notepad");
             Process.Start("wordpad");
             job.AddProcessToJob(Process.GetProcessesByName("notepad")[0]);
             job.AddProcessToJob(Process.GetProcessesByName("wordpad")[0]);
+
+            Console.WriteLine("For kill the processes press Enter . . .");
             Console.ReadLine();
             job.Kill();
 
