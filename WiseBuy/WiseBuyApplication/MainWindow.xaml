@@ -1,0 +1,239 @@
+﻿<Window x:Class="WiseBuyApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WiseBuyApplication"
+        mc:Ignorable="d"
+        Title="קנייה חכמה"
+        Icon="img2.png"
+        FlowDirection="RightToLeft"
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
+        Height="700"
+        Width="1000">
+
+    <Window.Resources>
+
+        <DataTemplate x:Key="ProductTemplate">
+
+            <Grid ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" SharedSizeGroup="Shared"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           Background="LightGray"
+                           Text="{Binding ProductName}"/>
+
+                <TextBlock Grid.Column="1"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Right"
+                           Text="{Binding ProductPriceString}"/>
+
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ChainShoppingCartTemplate">
+
+            <Border Background="Gray"
+                    MinHeight="100"
+                    MinWidth="200"
+                    Margin="5"
+                    BorderThickness="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{Binding ChainName}"
+                               Grid.Row="0"/>
+
+                    <ListBox Grid.Row="1"
+                             Grid.IsSharedSizeScope="True"
+                             ItemsSource="{Binding Products}"
+                             ItemTemplate="{StaticResource ProductTemplate}"/>
+
+
+                    <StackPanel Orientation="Horizontal"
+                            Grid.Row="2">
+
+                        <TextBlock Margin="5"
+                                   Text="מחיר כולל:"/>
+
+                        <TextBlock Text="{Binding TotalPrice, StringFormat={}{0:#,#.##}}"
+                                   Grid.Row="2"
+                                   Margin="5"
+                                   FontWeight="Bold"
+                                   Grid.Column="1"/>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="Chain3ItemsTemplate">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{Binding ChainName}"
+                           Grid.Row="0"/>
+
+                <ListBox Grid.Row="1"
+                         ItemsSource="{Binding Ordered3Items}"/>
+            </Grid>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="10"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="img2.png"
+               Grid.Column="0"
+               Grid.Row="4"/>
+
+        <GroupBox Header="רשימת מוצרים:"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="5">
+
+            <ScrollViewer>
+                <ItemsControl ItemsSource="{Binding Products}"
+                          Grid.IsSharedSizeScope="True"
+                          Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Shared2"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{Binding ProductName}"
+                                       Grid.Column="0"/>
+
+                                <Button Content="+"
+                                    Width="24" 
+                                    Height="18"
+                                    Margin="2"
+                                    Command="{Binding IncreaseCountCommand}"
+                                    HorizontalAlignment="Right"
+                                    Grid.Column="2"/>
+
+                                <TextBox Text="{Binding ProductCount}"
+                                     IsReadOnly="True"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     MinWidth="30"
+                                     Grid.Column="3"/>
+
+                                <Button Content="-"
+                                    Margin="2"
+                                    Height="18"
+                                    Width="24" 
+                                    Command="{Binding DecreaseCountCommand}"
+                                    HorizontalAlignment="Right"
+                                    Grid.Column="4"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </GroupBox>
+
+        <GroupBox Header="השוואת סל הקניות בין הרשתות"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="5">
+
+            <ItemsControl ItemsSource="{Binding ChainShoppingCarts}"
+                          VerticalAlignment="Top"
+                          ItemTemplate="{StaticResource ChainShoppingCartTemplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+        </GroupBox>
+
+        <GroupBox Header="המוצרים הזולים והיקרים עבור כול רשת"
+                  Grid.Row="4"
+                  Grid.Column="1"
+                  Margin="5">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="שלושת הפריטים הזולים בכל רשת:"
+                           Margin="5"
+                           Grid.Row="1"/>
+
+                <ListBox Grid.Row="2"
+                         BorderThickness="0"
+                         ItemsSource="{Binding Cheapest3Items}"
+                         ItemTemplate="{StaticResource Chain3ItemsTemplate}"
+                         Margin="5">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    
+                </ListBox>
+
+
+                <TextBlock Text="שלושת הפריטים היקרים בכל רשת:"
+                           Margin="5"
+                           Grid.Row="3"/>
+
+                <ListBox Grid.Row="4"
+                         BorderThickness="0"
+                         ItemsSource="{Binding MostExpensive3Items}"
+                         ItemTemplate="{StaticResource Chain3ItemsTemplate}"
+                         Margin="5">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    
+                </ListBox>
+
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+
+</Window>
