@@ -27,6 +27,15 @@ namespace WiseBuyApplication
 
         #region Collection Properties
 
+
+
+        public ObservableCollection<Chain3Items> MostExpensive3Items { get; set; }
+
+        public ObservableCollection<Chain3Items> Cheapest3Items { get; set; }
+
+        public ObservableCollection<Product> Products { get; set; }
+
+        private ObservableCollection<Price> Prices { get; set; }
         public ObservableCollection<Chain> Chains { get; set; }
 
         public ObservableCollection<ChainShoppingCart> ChainShoppingCarts
@@ -41,14 +50,6 @@ namespace WiseBuyApplication
                 OnPropertyChanged("ChainShoppingCarts");
             }
         }
-
-        public ObservableCollection<Chain3Items> MostExpensive3Items { get; set; }
-
-        public ObservableCollection<Chain3Items> Cheapest3Items { get; set; }
-
-        public ObservableCollection<Product> Products { get; set; }
-
-        private ObservableCollection<Price> Prices { get; set; }
 
         #endregion Collections Properties
 
@@ -176,6 +177,7 @@ namespace WiseBuyApplication
 
         private void FindMostExpensiveAndCheapestItems()
         {
+            
             MostExpensive3Items = new ObservableCollection<Chain3Items>();
 
             Cheapest3Items = new ObservableCollection<Chain3Items>();

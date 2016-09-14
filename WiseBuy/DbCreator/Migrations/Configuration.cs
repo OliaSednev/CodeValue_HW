@@ -10,7 +10,6 @@ namespace DbCreator.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "DbCreator.SuperMarketDb";
         }
 
         protected override void Seed(DbCreator.SuperMarketDb context)
